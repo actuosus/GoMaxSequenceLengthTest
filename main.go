@@ -20,21 +20,21 @@ func max(x, y int64) int64 {
 
 // MaxSequenceLength determine max length of char sequence in string
 func MaxSequenceLength(s string) int64 {
-    var final int64 = 0
-    if s == "" {
-        return final
-    }
-    var counter int64 = 0
-    var lastChar byte
+	var final int64 = 0
+	if s == "" {
+		return final
+	}
+	var counter int64 = 0
+	var lastChar byte
 
 	for i := 0; i < len(s); i++ {
 		if lastChar == s[i] {
-            counter++
-            final = max(counter, final)
+			counter++
+			final = max(counter, final)
 		} else {
-            lastChar = s[i]
-            counter = 1
-        }
+			lastChar = s[i]
+			counter = 1
+		}
 	}
 
 	return final
